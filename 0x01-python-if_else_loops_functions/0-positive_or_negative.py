@@ -1,3 +1,9 @@
 #!/usr/bin/python3
-for c in range(ord('a'), ord('z') + 1):
-    print('{:c}'.format(c), end='')
+import random
+c = random.randint(-10, 10)
+if c > 0:
+    print(f"{c} is positive")
+elif c == 0:
+    print(f"{c} is zero")
+else:
+    print(f"{c} is negative")
