@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-for i in range(ord('a'), ord('z') + 1):
-    if chr(i) == 'e':
-        continue
-    elif chr(i) == 'q':
-        continue
-    print(chr(i), end='')
+for letter in 'abcdefghijklmnopqrstuvwxyz':
+    if letter not in 'qe':
+        print('{}'.format(letter), end='')
