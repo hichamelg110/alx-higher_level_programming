@@ -1,2 +1,2 @@
-from add_0.py import def add
-def add(1, 2)
+from add_0.py import add
+add(1, 2)
