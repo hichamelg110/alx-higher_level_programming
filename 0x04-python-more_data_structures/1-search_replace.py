@@ -6,4 +6,3 @@ new_list =  []
             new_list.append(replace)
         else:
             new_list.append(i)
-            return new_list
