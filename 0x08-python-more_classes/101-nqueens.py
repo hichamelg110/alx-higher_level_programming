@@ -24,14 +24,14 @@ def create_board(n):
     chessboard = []
     [chessboard.append([]) for i in range(n)]
     [row.append(' ') for i in range(n) for row in chessboard]
-    return (chessboard)
+    return chessboard
 
 
 def copy_board(chessboard):
     """Create a deepcopy of a chessboard."""
     if isinstance(chessboard, list):
         return list(map(copy_board, chessboard))
-    return (chessboard)
+    return chessboard
 
 
 def find_solution(chessboard):
@@ -42,7 +42,7 @@ def find_solution(chessboard):
             if chessboard[r][c] == "Q":
                 solution.append([r, c])
                 break
-    return (solution)
+    return solution
 
 
 def mark_invalid_positions(chessboard, row, col):
@@ -80,7 +80,7 @@ def mark_invalid_positions(chessboard, row, col):
     for r in range(row - 1, -1, -1):
         if c < 0:
             break
-        chessboard[r][c]
+        chessboard[r][c] = "x"
         c -= 1
     # Mark all spots diagonally up to the right
     c = col + 1
@@ -111,7 +111,7 @@ def solve_n_queens(chessboard, row, queens, all_solutions):
     """
     if queens == len(chessboard):
         all_solutions.append(find_solution(chessboard))
-        return (all_solutions)
+        return all_solutions
 
     for c in range(len(chessboard)):
         if chessboard[row][c] == " ":
@@ -121,22 +121,25 @@ def solve_n_queens(chessboard, row, queens, all_solutions):
             all_solutions = solve_n_queens(temp_chessboard, row + 1,
                                         queens + 1, all_solutions)
 
-    return (all_solutions)
+    return all_solutions
 
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
-    if sys.argv[1].isdigit() is False:
-        print("N should be a number")
+    if not sys.argv[1].isdigit():
+        print("N must be a number")
         sys.exit(1)
     if int(sys.argv[1]) < 4:
-        print("N should be at least 4")
+        print("N must be at least 4")
         sys.exit(1)
 
     chessboard = create_board(int(sys.argv[1]))
-OAOAOAOAOA    all_solutions = solve_n_queens(chessboard, 0, 0, [])
+    all_solutions = solve_n_queens(chessboard, 0, 0, [])
+
+    # Print the number of solutions
+    print(f"Number of solutions: {len(all_solutions)}")
+
     for sol in all_solutions:
         print(sol)
-
