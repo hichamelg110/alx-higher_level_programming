@@ -1,3 +1,3 @@
-#!/usr/bin/python3
-def magic_string(n):
-    return "BestSchool" * n
+def magic_string(n=None):
+    n = n if n is not None else 1
+    return "BestSchool, " * (n - 1) + "BestSchool"
