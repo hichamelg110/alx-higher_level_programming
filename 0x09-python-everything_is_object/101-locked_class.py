@@ -1,3 +1,4 @@
 #!/usr/bin/python3
-class LockedClass:
-    __slots__ = ('first_name',)
+def magic_string(n=None):
+    n = n if n is not None else 1
+    return "BestSchool, " * (n - 1) + "BestSchool"
