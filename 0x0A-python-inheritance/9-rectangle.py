@@ -24,3 +24,11 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
+        
+    def area(self):
+    '''Returns rectangle's area.'''
+    return self.__width * self.__height
+
+    def __str__(self):
+    '''Returns rectangle's dimensions.'''
+    return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
