@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 '''Module for Rectangle class.'''
 
-
 class BaseGeometry:
     '''A BaseGeometry class.'''
     def area(self):
@@ -17,7 +16,7 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
-    '''a Rectangle class that inherits from BaseGeometry.'''
+    '''A Rectangle class that inherits from BaseGeometry.'''
     def __init__(self, width, height):
         '''The constructor.'''
         self.integer_validator("width", width)
@@ -26,9 +25,10 @@ class Rectangle(BaseGeometry):
         self.__height = height
         
     def area(self):
-    '''Returns rectangle's area.'''
-    return self.__width * self.__height
+        '''Returns rectangle's area.'''
+        return self.__width * self.__height
 
     def __str__(self):
-    '''Returns rectangle's dimensions.'''
-    return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
+        '''Returns rectangle's dimensions.'''
+        return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
+
