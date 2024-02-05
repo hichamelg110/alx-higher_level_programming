@@ -31,4 +31,3 @@ class Rectangle(BaseGeometry):
     def __str__(self):
         '''Returns rectangle's dimensions.'''
         return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
-
