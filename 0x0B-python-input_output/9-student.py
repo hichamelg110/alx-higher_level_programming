@@ -2,7 +2,7 @@
 """Student class definition."""
 
 class Student:
-    """Defines a student by first name, last name, and age."""
+    """Defines a student."""
 
     def __init__(self, first_name, last_name, age):
         """Initializes a Student instance."""
